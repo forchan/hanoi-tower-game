@@ -1,0 +1,75 @@
+.app {
+  background-color: #e2e2e4;
+  text-align: center;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.app-header {
+  background: linear-gradient(
+    -45deg,
+    #5d5d5d 0%,
+    #3f3f3f 31%,
+    #1c1c1c 81%
+  );
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.app-footer {
+  background: linear-gradient(
+    -45deg,
+    #5d5d5d 0%,
+    #3f3f3f 29%,
+    #1c1c1c 85%
+  );
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.app-body {
+  background: transparent;
+  margin: 0 12% 0 12%;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.app-body > div {
+  flex: 1;
+}
+
+.tower {
+  /* background-color: gray; */
+  /* cursor: pointer; */
+  height: 42vh;
+  border-bottom: 2vh solid;
+	border-radius: 3%;
+	text-align: center;
+	margin: 8% 5% 0 5%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.tower::after {
+  content: '';
+  width: 2vh;
+  height: 100vh;
+  background: black;
+  position: static;
+  z-index: 1;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
