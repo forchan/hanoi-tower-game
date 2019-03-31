@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 
 class Disk extends Component {
   render() {
-    return (
+    const diskSize = 'disk' + this.props.size;
 
+    return (
+      <div className={'disk ' + diskSize} />
     );
   }
 }

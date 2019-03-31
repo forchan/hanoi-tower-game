@@ -1,3 +1,5 @@
+/* -------- APP -------- */
+
 .app {
   background-color: #e2e2e4;
   text-align: center;
@@ -5,6 +7,8 @@
   min-height: 100vh;
   flex-direction: column;
 }
+
+/* -------- HEADER -------- */
 
 .app-header {
   background: linear-gradient(
@@ -22,6 +26,8 @@
   color: white;
 }
 
+/* -------- FOOTER -------- */
+
 .app-footer {
   background: linear-gradient(
     -45deg,
@@ -38,6 +44,8 @@
   color: white;
 }
 
+/* -------- BODY -------- */
+
 .app-body {
   background: transparent;
   margin: 0 12% 0 12%;
@@ -50,6 +58,8 @@
   flex: 1;
 }
 
+/* -------- TOWER -------- */
+
 .tower {
   /* background-color: gray; */
   /* cursor: pointer; */
@@ -59,17 +69,106 @@
 	text-align: center;
 	margin: 8% 5% 0 5%;
 	display: flex;
-	flex-direction: column;
+	flex-direction: column-reverse;
 	align-items: center;
 }
 
 .tower::after {
   content: '';
   width: 2vh;
-  height: 100vh;
+  height: 43vh;
   background: black;
-  position: static;
-  z-index: 1;
+  position: absolute;
+  z-index: 0;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
+}
+
+/* -------- DISK -------- */
+
+.disk {
+	height: 5.1vh;
+	display: block;
+	border-radius: 25px;
+	z-index: 1;
+}
+
+.disk1 {
+  background: linear-gradient(
+    -45deg,
+    #ff9191 0%,
+    #f22e2e 29%,
+    #e21a00 85%
+  );
+  width: 23%;
+}
+
+.disk2 {
+  background: linear-gradient(
+    -45deg,
+    #f4b773 0%,
+    #f49f3d 29%,
+    #fc7a00 85%
+  );
+  width: 34%;
+}
+
+.disk3 {
+  background: linear-gradient(
+    -45deg,
+    #caf490 0%,
+    #aeef53 29%,
+    #80d806 85%
+  );
+  width: 45%;
+}
+
+.disk4 {
+  background: linear-gradient(
+    -45deg,
+    #86efc3 0%,
+    #4beda9 29%,
+    #06d880 85%
+  );
+  width: 56%;
+}
+
+.disk5 {
+  background: linear-gradient(
+    -45deg,
+    #82d3e5 0%,
+    #4bcfed 29%,
+    #06b1d8 85%
+  );
+  width: 67%;
+}
+
+.disk6 {
+  background: linear-gradient(
+    -45deg,
+    #84b8ed 0%,
+    #4aa0f7 29%,
+    #066fd8 85%
+  );
+  width: 78%;
+}
+
+.disk7 {
+  background: linear-gradient(
+    -45deg,
+    #a87cea 0%,
+    #8c4aef 29%,
+    #5a06d8 85%
+  );
+  width: 89%;
+}
+
+.disk8 {
+  background: linear-gradient(
+    -45deg,
+    #c282e5 0%,
+    #b64cef 29%,
+    #8e06d8 85%
+  );
+  width: 100%;
 }
