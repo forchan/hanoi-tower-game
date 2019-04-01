@@ -1,1 +1,1 @@
-export const TOWERS = [ '1', '2', '3' ];
+export const DISK = '#imadisk';
