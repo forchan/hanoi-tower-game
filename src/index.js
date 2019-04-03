@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './Styles/hanoi-tower-game.css';
-import './Styles/index.css';
-import App from './Components/App.jsx';
+import './styles/hanoi-tower-game.css';
+import './styles/index.css';
+import App from './components/App.jsx';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));

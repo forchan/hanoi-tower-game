@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd'
-import { DISK } from '../Constants/Constants.js'
+import { DISK } from '../constants/Constants.js'
 
 const defaultProps = {
   disks: []
