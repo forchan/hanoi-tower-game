@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd'
-import { DISK } from '../constants/Constants.js'
+import { DISK } from '../constants/GameConstants.js'
 
 const defaultProps = {
   size: 1,
@@ -13,7 +13,7 @@ const propTypes = {
   draggable: PropTypes.bool
 };
 
-const Disk = ({ connectDragSource, isDragging, draggable, canDrag, size }) => {
+const Disk = ({ connectDragSource, isDragging, draggable, size }) => {
   const diskClassName = 'disk disk' + size;
 
   if (draggable) {
@@ -27,14 +27,14 @@ const Disk = ({ connectDragSource, isDragging, draggable, canDrag, size }) => {
   }
 
   return <div className={diskClassName} />;
-}
+};
 
 Disk.defaultProps = defaultProps;
 Disk.propTypes = propTypes;
 
 const cardSource = {
   canDrag(props, monitor) {
-    return props.canDrag(props.id);
+    return props.canDragDiskFromTower(props.id, props.towers);
   },
   beginDrag(props, monitor) {
     const item = { id: props.id };

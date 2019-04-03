@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd'
-import { DISK } from '../constants/Constants.js'
+import Disk from '../containers/DiskContainer.jsx';
+import { DISK } from '../constants/GameConstants.js';
+import { createDiskObject } from '../utils/DiskUtils.js';
 
 const defaultProps = {
   disks: []
@@ -28,12 +30,13 @@ Tower.propTypes = propTypes;
 
 const spec = {
   drop(props, monitor, component) {
-    const item = monitor.getItem();
-    props.handleDrop(item.id, props.id);
+    const itemId = monitor.getItem().id;
+    const newDisk = createDiskObject(itemId);
+    props.transferDiskBetweenTowers(newDisk, props.id);
   },
   canDrop(props, monitor, component) {
     const item = monitor.getItem();
-    return props.canDrop(item.id, props.id);
+    return props.canDropDiskToTower(item.id, props.id, props.disks);
   }
 };
 
