@@ -12,9 +12,13 @@ const propTypes = {
 };
 
 const Tower = ({ disks, connectDropTarget, canDrop, isOver }) => {
-  return (
+  const disksToRender = [];
+  disks.forEach((disk) => {
+    disksToRender.push(disk.component);
+  })
+  return connectDropTarget(
     <div className="tower">
-      {disks}
+      {disksToRender}
     </div>
   );
 }
@@ -25,7 +29,11 @@ Tower.propTypes = propTypes;
 const spec = {
   drop(props, monitor, component) {
     const item = monitor.getItem();
-    props.onDrop(item);
+    props.handleDrop(item.id, props.id);
+  },
+  canDrop(props, monitor, component) {
+    const item = monitor.getItem();
+    return props.canDrop(item.id, props.id);
   }
 };
 
@@ -33,7 +41,6 @@ function collect(connect, monitor) {
   return {
     connectDropTarget: connect.dropTarget(),
     isOver: monitor.isOver(),
-    isOverCurrent: monitor.isOver({ shallow: true }),
     canDrop: monitor.canDrop()
   };
 }

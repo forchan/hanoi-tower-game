@@ -13,7 +13,7 @@ const propTypes = {
   draggable: PropTypes.bool
 };
 
-const Disk = ({ connectDragSource, isDragging, draggable, size }) => {
+const Disk = ({ connectDragSource, isDragging, draggable, canDrag, size }) => {
   const diskClassName = 'disk disk' + size;
 
   if (draggable) {
@@ -32,11 +32,19 @@ const Disk = ({ connectDragSource, isDragging, draggable, size }) => {
 Disk.defaultProps = defaultProps;
 Disk.propTypes = propTypes;
 
+const cardSource = {
+  canDrag(props, monitor) {
+    return props.canDrag(props.id);
+  },
+  beginDrag(props, monitor) {
+    const item = { id: props.id };
+    return item;
+  }
+};
+
 export default DragSource(
   DISK,
-  {
-    beginDrag: () => ({}),
-  },
+  cardSource,
   (connect, monitor) => ({
     connectDragSource: connect.dragSource(),
     isDragging: monitor.isDragging(),
