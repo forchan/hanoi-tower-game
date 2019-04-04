@@ -7,4 +7,3 @@ export const GameStates = {
   IN_MENU: '#notInGame',
   WON: '#playerTooGood'
 };
-export const NO_DISKS_YET = '#noDisksOnTowerYet';

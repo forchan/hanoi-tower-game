@@ -1,9 +1,9 @@
-import { GameStates, NO_DISKS_YET } from '../constants/GameConstants.js';
+import { GameStates } from '../constants/GameConstants.js';
 import { SET_GAME_STATE, SET_DISKS } from '../constants/ActionConstants.js';
 
 const initialGameState = ({
   gameState: GameStates.IN_MENU,
-  diskLevel: NO_DISKS_YET
+  diskLevel: 3
 });
 
 const gameReducer = (state = initialGameState, action) => {

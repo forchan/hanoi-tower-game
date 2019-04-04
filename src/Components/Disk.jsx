@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd'
 import { canDragDiskFromTower } from '../utils/GameUtils.js';
-import { DISK } from '../constants/GameConstants.js'
+import { GameStates, DISK } from '../constants/GameConstants.js'
 
 const defaultProps = {
   size: 1,
@@ -35,7 +35,10 @@ Disk.propTypes = propTypes;
 
 const cardSource = {
   canDrag(props, monitor) {
-    return props.canDragDiskFromTower(props.id, props.towers);
+    if (props.game.gameState !== GameStates.IN_SESSION) {
+      return false;
+    }
+    return canDragDiskFromTower(props.id, props.towers);
   },
   beginDrag(props, monitor) {
     const item = { id: props.id };

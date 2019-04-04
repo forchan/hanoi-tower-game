@@ -5,6 +5,7 @@ import Disk from '../containers/DiskContainer.jsx';
 import { DISK } from '../constants/GameConstants.js';
 import { createDiskObject } from '../utils/DiskUtils.js';
 import { canDropDiskToTower } from '../utils/GameUtils.js';
+import { GameStates } from '../constants/GameConstants.js';
 
 const defaultProps = {
   disks: []
@@ -34,6 +35,9 @@ const spec = {
     const itemId = monitor.getItem().id;
     const newDisk = createDiskObject(itemId);
     props.transferDiskBetweenTowers(newDisk, props.id);
+    if (props.id === 3 && props.towers.tower3.length === props.game.diskLevel) {
+      props.setGameState(GameStates.WON);
+    }
   },
   canDrop(props, monitor, component) {
     const item = monitor.getItem();

@@ -1,13 +1,16 @@
 import { connect } from 'react-redux';
 import Tower from '../components/Tower.jsx';
 import { transferDiskBetweenTowers } from '../actions/towers.js';
+import { setGameState } from '../actions/game.js';
 
 const mapStateToProps = (state) => ({
-  // no state needed as of now
+  towers: state.towers,
+  game: state.game
 });
 
 const mapActionsToProps = ({
-  transferDiskBetweenTowers
+  transferDiskBetweenTowers,
+  setGameState
 });
 
 export default connect(

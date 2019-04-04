@@ -8,7 +8,7 @@ export const createDiskObject = diskId => ({
 
 export const createGameStartDisks = numDisks => {
   let gameStartDisks = [];
-  for (let numDisk = numDisks; numDisk >= 0; numDisk--) {
+  for (let numDisk = numDisks; numDisk > 0; numDisk--) {
     gameStartDisks.push(createDiskObject(numDisk));
   }
   return gameStartDisks;

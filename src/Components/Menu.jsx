@@ -11,7 +11,7 @@ import {
 } from 'reactstrap';
 
 const Menu = ({ game, startNewGame }) => {
-  const [ selectedLevel, setSelectedLevel ] = useState(3);
+  const [ selectedLevel, setSelectedLevel ] = useState(game.diskLevel);
   const availableLevels = [ 3, 4, 5, 6, 7, 8 ];
   const levelOptions = availableLevels.map((availableLevel) => (
     <option key={availableLevel}>{availableLevel}</option>
