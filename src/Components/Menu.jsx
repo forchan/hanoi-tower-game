@@ -11,7 +11,7 @@ import {
 } from 'reactstrap';
 import { GameStates } from '../constants/GameConstants.js';
 
-const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu }) => {
+const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu, resetMoveCount }) => {
   const [ selectedLevel, setSelectedLevel ] = useState(game.diskLevel);
   const availableLevels = [ 3, 4, 5, 6, 7, 8 ];
   const levelOptions = availableLevels.map((availableLevel) => (
@@ -20,6 +20,7 @@ const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu }) => {
   const clearDisksAndStartNewGame = () => {
     removeAllDisks();
     setupNewGame(selectedLevel);
+    resetMoveCount();
   }
 
   return (
@@ -55,7 +56,7 @@ const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu }) => {
         >
           Start New Game
         </Button>
-        {(game.gameState !== GameStates.NOT_STARTED) &&
+        {(game.gameState === GameStates.IN_SESSION) &&
           <Button
             className="float-left"
             color={(game.gameState === GameStates.IN_SESSION) ? "success" : "info"}

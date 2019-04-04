@@ -3,7 +3,8 @@ import {
   SET_GAME_STATE,
   SET_DISKS,
   TOGGLE_MENU,
-  INCREMENT_MOVES
+  INCREMENT_MOVES,
+  RESET_MOVE_COUNT
 } from '../constants/ActionConstants.js';
 
 const initialGameState = ({
@@ -35,6 +36,11 @@ const gameReducer = (state = initialGameState, action) => {
         ...state,
         movesTaken: state.movesTaken + 1
       };
+    case RESET_MOVE_COUNT:
+      return {
+        ...state,
+        movesTaken: 0
+      }
     default:
       return state;
   }

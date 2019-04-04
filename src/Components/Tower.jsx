@@ -15,7 +15,7 @@ const propTypes = {
   disks: PropTypes.array
 };
 
-const Tower = ({ disks, connectDropTarget, canDrop, isOver }) => {
+const Tower = ({ disks, connectDropTarget, canDrop, isOver, incrementMoves }) => {
   const disksToRender = [];
   disks.forEach((disk) => {
     disksToRender.push(disk.component);
@@ -34,6 +34,7 @@ const spec = {
   drop(props, monitor, component) {
     const itemId = monitor.getItem().id;
     const newDisk = createDiskObject(itemId);
+    props.incrementMoves();
     if (props.id === 3 && props.towers.tower3.length === props.game.diskLevel - 1) {
       // if this is the last disk being dropped on tower3, player wins
       props.setGameState(GameStates.WON);

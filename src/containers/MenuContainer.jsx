@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Menu from '../components/Menu.jsx';
-import { setupNewGame, toggleMenu } from '../actions/game.js';
+import { setupNewGame, toggleMenu, resetMoveCount } from '../actions/game.js';
 import { removeAllDisks } from '../actions/towers.js';
 
 const mapStateToProps = state => ({
@@ -10,7 +10,8 @@ const mapStateToProps = state => ({
 const mapActionsToProps = ({
   setupNewGame,
   toggleMenu,
-  removeAllDisks
+  removeAllDisks,
+  resetMoveCount
 });
 
 export default connect(

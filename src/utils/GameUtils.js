@@ -25,3 +25,7 @@ export const canDragDiskFromTower = (diskId, towers = {}) => {
   }
   return false;
 };
+
+export const calculateMinimumPossibleMoves = numDisks => (
+  Math.pow(2, numDisks) - 1
+)

@@ -2,6 +2,7 @@ import React from 'react';
 import Tower from '../containers/TowerContainer.jsx';
 import Disk from '../containers/DiskContainer.jsx';
 import { createGameStartDisks, createDiskObject } from '../utils/DiskUtils.js';
+import { calculateMinimumPossibleMoves } from '../utils/GameUtils.js';
 import Menu from '../containers/MenuContainer.jsx';
 import { GameStates, NO_DISKS_YET } from '../constants/GameConstants.js';
 import { Button, Card, CardBody, Col, Row } from 'reactstrap';
@@ -24,6 +25,7 @@ const Game = ({ game, towers, addManyDisksToTower, toggleMenu, setGameState }) =
   }, []);
 
   const { tower1, tower2, tower3 } = towers;
+  const gameWon = (game.gameState === GameStates.WON);
 
   return (
     <div className="app-body">
@@ -31,23 +33,27 @@ const Game = ({ game, towers, addManyDisksToTower, toggleMenu, setGameState }) =
         <CardBody>
           <div style={{position:'relative'}}>
             <Button
-              color={(game.gameState === GameStates.WON) ? "success" : "info"}
+              color={(gameWon) ? "success" : "info"}
               onClick={() => toggleMenu()}
               className="float-right"
             >
-              {(game.gameState === GameStates.WON) ? 'New Game' : 'Menu'}
+              {(gameWon) ? 'New Game' : 'Menu'}
             </Button>
           </div>
-          <h6>Minimum possible moves: 1</h6>
-          <h6>Your moves: 0</h6>
+          <h6>
+            Minimum possible moves: {calculateMinimumPossibleMoves(game.diskLevel)}
+          </h6>
+          <h6>Your moves: {game.movesTaken}</h6>
         </CardBody>
       </Card>
       <Tower id={1} disks={tower1} />
       <Tower id={2} disks={tower2} />
       <Tower id={3} disks={tower3} />
-      <Card className="win-message" outline color="secondary">
-        <h4 className="text-success">Nice, you win!</h4>
-      </Card>
+      {(gameWon) &&
+        <Card className="win-message" outline color="secondary">
+          <h4 className="text-success">Nice, you win!</h4>
+        </Card>
+      }
     </div>
   );
 };

@@ -7,3 +7,4 @@ export const SET_GAME_STATE = '#setGameState';
 export const SET_DISKS = '#setDisks';
 export const TOGGLE_MENU = '#toggleMenu';
 export const INCREMENT_MOVES = '#movingDisk';
+export const RESET_MOVE_COUNT = '#cleanSlate';
