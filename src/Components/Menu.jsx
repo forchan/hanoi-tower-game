@@ -9,8 +9,9 @@ import {
   Label,
   Col,
 } from 'reactstrap';
+import { GameStates } from '../constants/GameConstants.js';
 
-const Menu = ({ game, setupNewGame, removeAllDisks }) => {
+const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu }) => {
   const [ selectedLevel, setSelectedLevel ] = useState(game.diskLevel);
   const availableLevels = [ 3, 4, 5, 6, 7, 8 ];
   const levelOptions = availableLevels.map((availableLevel) => (
@@ -49,11 +50,20 @@ const Menu = ({ game, setupNewGame, removeAllDisks }) => {
         </Form>
         <Button
           className="float-right"
-          color="success"
+          color={(game.gameState === GameStates.IN_SESSION) ? "danger" : "success"}
           onClick={clearDisksAndStartNewGame}
-          >
-          setup Game
+        >
+          Start New Game
         </Button>
+        {(game.gameState !== GameStates.NOT_STARTED) &&
+          <Button
+            className="float-left"
+            color={(game.gameState === GameStates.IN_SESSION) ? "success" : "info"}
+            onClick={() => toggleMenu()}
+          >
+            Resume Game
+          </Button>
+        }
       </ModalBody>
     </Modal>
   );

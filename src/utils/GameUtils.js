@@ -7,7 +7,7 @@ import {
 const getLastElementId = array => array.slice(-1)[0].id; // works only if it has elements
 
 export const canDropDiskToTower = (diskId, towerId, tower) => {
-  if (tower.length > 0 && getLastElementId(tower) < diskId) {
+  if (tower.length > 0 && getLastElementId(tower) <= diskId) {
     return false;
   }
   return true;
