@@ -34,10 +34,11 @@ const spec = {
   drop(props, monitor, component) {
     const itemId = monitor.getItem().id;
     const newDisk = createDiskObject(itemId);
-    props.transferDiskBetweenTowers(newDisk, props.id);
-    if (props.id === 3 && props.towers.tower3.length === props.game.diskLevel) {
+    if (props.id === 3 && props.towers.tower3.length === props.game.diskLevel - 1) {
+      // if this is the last disk being dropped on tower3, player wins
       props.setGameState(GameStates.WON);
     }
+    props.transferDiskBetweenTowers(newDisk, props.id);
   },
   canDrop(props, monitor, component) {
     const item = monitor.getItem();

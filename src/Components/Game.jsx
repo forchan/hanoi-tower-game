@@ -6,8 +6,8 @@ import Menu from '../containers/MenuContainer.jsx';
 import { GameStates, NO_DISKS_YET } from '../constants/GameConstants.js';
 import { Button } from 'reactstrap';
 
-const Game = ({ game, towers, addManyDisksToTower, setGameState }) => {
-  if (game.gameState === GameStates.IN_MENU) {
+const Game = ({ game, towers, addManyDisksToTower, toggleMenu, setGameState }) => {
+  if (game.menu) {
     return (
       <div className="app-body">
         <Menu />
@@ -15,23 +15,24 @@ const Game = ({ game, towers, addManyDisksToTower, setGameState }) => {
     );
   }
 
-  const { tower1, tower2, tower3 } = towers;
-
   React.useEffect(() => {
-    if (tower1.length === 0 && tower2.length === 0 && tower3.length === 0) {
+    if (game.gameState === GameStates.NOT_STARTED) {
       const initialDisks = createGameStartDisks(game.diskLevel);
       addManyDisksToTower(initialDisks, 1);
+      setGameState(GameStates.IN_SESSION);
     }
   }, []);
+
+  const { tower1, tower2, tower3 } = towers;
 
   return (
     <div className="app-body">
       <Button
-        color="info"
+        color={(game.gameState === GameStates.WON) ? "success" : "info"}
         className="menu-button"
-        onClick={() => setGameState(GameStates.IN_MENU)}
+        onClick={() => toggleMenu()}
       >
-        Menu
+        {(game.gameState === GameStates.WON) ? 'New Game' : 'Menu'}
       </Button>
       <Tower id={1} disks={tower1} />
       <Tower id={2} disks={tower2} />

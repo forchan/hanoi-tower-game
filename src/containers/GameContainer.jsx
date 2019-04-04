@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import Game from '../components/Game.jsx';
 import { addManyDisksToTower } from '../actions/towers.js';
-import { setGameState } from '../actions/game.js';
+import { toggleMenu, setGameState } from '../actions/game.js';
 
 const mapStateToProps = state => ({
   towers: state.towers,
@@ -10,6 +10,7 @@ const mapStateToProps = state => ({
 
 const mapActionsToProps = ({
   addManyDisksToTower,
+  toggleMenu,
   setGameState
 });
 

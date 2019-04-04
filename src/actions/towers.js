@@ -2,6 +2,7 @@ import {
   ADD_ONE_DISK_TO_TOWER,
   ADD_MANY_DISKS_TO_TOWER,
   REMOVE_TARGET_DISK_FROM_ALL_TOWERS,
+  REMOVE_ALL_DISKS,
   TRANSFER_DISK_BETWEEN_TOWERS
 } from '../constants/ActionConstants.js';
 import {
@@ -33,6 +34,10 @@ export const addManyDisksToTower = (arrayOfDisks, towerId) => ({
   type: ADD_MANY_DISKS_TO_TOWER,
   arrayOfDisks,
   towerName: getTowerNameById(towerId)
+});
+
+export const removeAllDisks = () => ({
+  type: REMOVE_ALL_DISKS
 });
 
 export const removeTargetDiskFromAllTowers = (diskId) => ({

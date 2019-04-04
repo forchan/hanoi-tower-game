@@ -1,7 +1,8 @@
 import {
   ADD_ONE_DISK_TO_TOWER,
   ADD_MANY_DISKS_TO_TOWER,
-  REMOVE_TARGET_DISK_FROM_ALL_TOWERS
+  REMOVE_TARGET_DISK_FROM_ALL_TOWERS,
+  REMOVE_ALL_DISKS
 } from '../constants/ActionConstants.js';
 import {
   TOWER_ONE,
@@ -42,7 +43,14 @@ const towersReducer = (state = initialTowers, action) => {
         [TOWER_ONE]: newTower1,
         [TOWER_TWO]: newTower2,
         [TOWER_THREE]: newTower3
-      }
+      };
+    case REMOVE_ALL_DISKS:
+      return {
+        ...state,
+        [TOWER_ONE]: [],
+        [TOWER_TWO]: [],
+        [TOWER_THREE]: []
+      };
     default:
       return state;
   }

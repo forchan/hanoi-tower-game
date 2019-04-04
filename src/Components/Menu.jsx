@@ -10,12 +10,16 @@ import {
   Col,
 } from 'reactstrap';
 
-const Menu = ({ game, startNewGame }) => {
+const Menu = ({ game, setupNewGame, removeAllDisks }) => {
   const [ selectedLevel, setSelectedLevel ] = useState(game.diskLevel);
   const availableLevels = [ 3, 4, 5, 6, 7, 8 ];
   const levelOptions = availableLevels.map((availableLevel) => (
     <option key={availableLevel}>{availableLevel}</option>
   ));
+  const clearDisksAndStartNewGame = () => {
+    removeAllDisks();
+    setupNewGame(selectedLevel);
+  }
 
   return (
     <Modal isOpen={true} fade={false} toggle={() => {}} centered>
@@ -46,9 +50,9 @@ const Menu = ({ game, startNewGame }) => {
         <Button
           className="float-right"
           color="success"
-          onClick={() => startNewGame(selectedLevel)}
-        >
-          Start Game
+          onClick={clearDisksAndStartNewGame}
+          >
+          setup Game
         </Button>
       </ModalBody>
     </Modal>

@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import Menu from '../components/Menu.jsx';
-import { startNewGame } from '../actions/game.js';
+import { setupNewGame } from '../actions/game.js';
+import { removeAllDisks } from '../actions/towers.js';
 
 const mapStateToProps = state => ({
   game: state.game
 });
 
 const mapActionsToProps = ({
-  startNewGame
+  setupNewGame,
+  removeAllDisks
 });
 
 export default connect(
