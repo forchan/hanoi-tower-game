@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Modal,
@@ -11,14 +11,14 @@ import {
 } from 'reactstrap';
 
 const Menu = () => {
-  const levelOptions = [];
-  for (let level = 3; level <= 8; level++) {
-    levelOptions.push(
-      <option key={level}>{level}</option>
-    );
-  }
+  const [ selectedLevel, setSelectedLevel ] = useState(3);
+  const availableLevels = [ 3, 4, 5, 6, 7, 8 ];
+  const levelOptions = availableLevels.map((availableLevel) => (
+    <option key={availableLevel}>{availableLevel}</option>
+  ));
+  
   return (
-    <Modal isOpen={true} fade={false} toggle={() => (alert("oh"))} centered>
+    <Modal isOpen={true} fade={false} toggle={() => {}} centered>
       <ModalBody>
         <h1>
           Towers of Hanoi
@@ -31,13 +31,25 @@ const Menu = () => {
               <h5>Select level of disks</h5>
             </Label>
             <Col sm={2}>
-              <Input type="select" name="select" id="selectLevel">
+              <Input
+                type="select"
+                name="select"
+                id="selectLevel"
+                value={selectedLevel}
+                onChange={e => setSelectedLevel(e.target.value)}
+              >
                 {levelOptions}
               </Input>
             </Col>
           </FormGroup>
         </Form>
-        <Button className="float-right" color="secondary" onClick={() => (alert("oh"))}>Cancel</Button>
+        <Button
+          className="float-right"
+          color="success"
+          onClick={() => (alert("oh"))}
+        >
+          Start Game
+        </Button>
       </ModalBody>
     </Modal>
   );
