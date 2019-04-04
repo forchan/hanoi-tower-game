@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DragSource } from 'react-dnd'
+import { canDragDiskFromTower } from '../utils/GameUtils.js';
 import { DISK } from '../constants/GameConstants.js'
 
 const defaultProps = {

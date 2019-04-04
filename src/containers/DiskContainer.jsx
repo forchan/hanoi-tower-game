@@ -1,10 +1,8 @@
 import { connect } from 'react-redux';
 import Disk from '../components/Disk.jsx';
-import { canDragDiskFromTower } from '../utils/GameUtils.js';
 
 const mapStateToProps = (state) => ({
-  towers: state.towers,
-  canDragDiskFromTower
+  towers: state.towers
 });
 
 export default connect(

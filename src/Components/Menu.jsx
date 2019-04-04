@@ -10,13 +10,13 @@ import {
   Col,
 } from 'reactstrap';
 
-const Menu = () => {
+const Menu = ({ game, startNewGame }) => {
   const [ selectedLevel, setSelectedLevel ] = useState(3);
   const availableLevels = [ 3, 4, 5, 6, 7, 8 ];
   const levelOptions = availableLevels.map((availableLevel) => (
     <option key={availableLevel}>{availableLevel}</option>
   ));
-  
+
   return (
     <Modal isOpen={true} fade={false} toggle={() => {}} centered>
       <ModalBody>
@@ -46,7 +46,7 @@ const Menu = () => {
         <Button
           className="float-right"
           color="success"
-          onClick={() => (alert("oh"))}
+          onClick={() => startNewGame(selectedLevel)}
         >
           Start Game
         </Button>

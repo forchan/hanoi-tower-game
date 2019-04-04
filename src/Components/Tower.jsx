@@ -4,6 +4,7 @@ import { DropTarget } from 'react-dnd'
 import Disk from '../containers/DiskContainer.jsx';
 import { DISK } from '../constants/GameConstants.js';
 import { createDiskObject } from '../utils/DiskUtils.js';
+import { canDropDiskToTower } from '../utils/GameUtils.js';
 
 const defaultProps = {
   disks: []
@@ -36,7 +37,7 @@ const spec = {
   },
   canDrop(props, monitor, component) {
     const item = monitor.getItem();
-    return props.canDropDiskToTower(item.id, props.id, props.disks);
+    return canDropDiskToTower(item.id, props.id, props.disks);
   }
 };
 
