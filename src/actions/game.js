@@ -4,7 +4,8 @@ import { removeAllDisks } from '../actions/towers.js';
 import {
   SET_GAME_STATE,
   SET_DISKS,
-  TOGGLE_MENU
+  TOGGLE_MENU,
+  INCREMENT_MOVES
 } from '../constants/ActionConstants.js';
 
 export const setGameState = gameState => ({
@@ -28,3 +29,7 @@ export const setupNewGame = numDisks => dispatch => {
   dispatch(setGameState(GameStates.NOT_STARTED));
   dispatch(toggleMenu());
 };
+
+export const incrementMoves = () => ({
+  type: INCREMENT_MOVES
+})

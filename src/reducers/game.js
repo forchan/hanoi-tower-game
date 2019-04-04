@@ -2,12 +2,14 @@ import { GameStates } from '../constants/GameConstants.js';
 import {
   SET_GAME_STATE,
   SET_DISKS,
-  TOGGLE_MENU
+  TOGGLE_MENU,
+  INCREMENT_MOVES
 } from '../constants/ActionConstants.js';
 
 const initialGameState = ({
   gameState: GameStates.NOT_STARTED,
   diskLevel: 3,
+  movesTaken: 0,
   menu: true
 });
 
@@ -27,7 +29,12 @@ const gameReducer = (state = initialGameState, action) => {
       return {
         ...state,
         menu: !state.menu
-      }
+      };
+    case INCREMENT_MOVES:
+      return {
+        ...state,
+        movesTaken: state.movesTaken + 1
+      };
     default:
       return state;
   }

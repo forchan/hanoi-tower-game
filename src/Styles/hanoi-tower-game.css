@@ -53,6 +53,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  min-width: 500px;
+  min-height: 350px;
 }
 
 .app-body > div {
@@ -65,33 +67,42 @@ h1, h2, h3, h4, h5, h6 {
   color: #37393f;
 }
 
-/* -------- BUTTON --------- */
+/* -------- MENU --------- */
 
-.menu-button {
-   position: absolute;
-   top: 12vh;
+.menu-box {
+   position: fixed !important;
+   top: 12vh !important;
+   width: 55vh !important;
+   height: 87px !important;
+   min-width: 350px !important;
+}
+
+.win-message {
+   position: fixed !important;
+   top: 27% !important;
+   height: 35px !important;
+   min-width: 200px !important;
 }
 
 /* -------- TOWER -------- */
 
 .tower {
-  /* background-color: gray; */
-  /* cursor: pointer; */
-  height: 42vh;
+  color: #37393f;
+  height: calc((30vh + 30vw) / 2);
   border-bottom: 2vh solid;
 	border-radius: 3%;
 	text-align: center;
-	margin: 8% 5% 0 5%;
+	margin: 15% 5% 0 5%;
 	display: flex;
 	flex-direction: column-reverse;
 	align-items: center;
 }
 
 .tower::after {
+  background: #37393f;
   content: '';
   width: 2vh;
-  height: 43vh;
-  background: black;
+  height: calc((30vh + 30vw) / 2);
   position: absolute;
   z-index: 0;
   border-top-left-radius: 20px;
@@ -101,7 +112,8 @@ h1, h2, h3, h4, h5, h6 {
 /* -------- DISK -------- */
 
 .disk {
-	height: 5.1vh;
+	height: calc((5.1vh + 5.1vw) / 2);
+  max-height: 5.1vh;
 	display: block;
 	border-radius: 25px;
 	z-index: 1;

@@ -4,7 +4,7 @@ import Disk from '../containers/DiskContainer.jsx';
 import { createGameStartDisks, createDiskObject } from '../utils/DiskUtils.js';
 import Menu from '../containers/MenuContainer.jsx';
 import { GameStates, NO_DISKS_YET } from '../constants/GameConstants.js';
-import { Button } from 'reactstrap';
+import { Button, Card, CardBody, Col, Row } from 'reactstrap';
 
 const Game = ({ game, towers, addManyDisksToTower, toggleMenu, setGameState }) => {
   if (game.menu) {
@@ -27,16 +27,27 @@ const Game = ({ game, towers, addManyDisksToTower, toggleMenu, setGameState }) =
 
   return (
     <div className="app-body">
-      <Button
-        color={(game.gameState === GameStates.WON) ? "success" : "info"}
-        className="menu-button"
-        onClick={() => toggleMenu()}
-      >
-        {(game.gameState === GameStates.WON) ? 'New Game' : 'Menu'}
-      </Button>
+      <Card className="menu-box" outline color="secondary">
+        <CardBody>
+          <div style={{position:'relative'}}>
+            <Button
+              color={(game.gameState === GameStates.WON) ? "success" : "info"}
+              onClick={() => toggleMenu()}
+              className="float-right"
+            >
+              {(game.gameState === GameStates.WON) ? 'New Game' : 'Menu'}
+            </Button>
+          </div>
+          <h6>Minimum possible moves: 1</h6>
+          <h6>Your moves: 0</h6>
+        </CardBody>
+      </Card>
       <Tower id={1} disks={tower1} />
       <Tower id={2} disks={tower2} />
       <Tower id={3} disks={tower3} />
+      <Card className="win-message" outline color="secondary">
+        <h4 className="text-success">Nice, you win!</h4>
+      </Card>
     </div>
   );
 };

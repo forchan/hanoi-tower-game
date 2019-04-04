@@ -6,3 +6,4 @@ export const TRANSFER_DISK_BETWEEN_TOWERS = '#transferDiskBetweenTowers';
 export const SET_GAME_STATE = '#setGameState';
 export const SET_DISKS = '#setDisks';
 export const TOGGLE_MENU = '#toggleMenu';
+export const INCREMENT_MOVES = '#movingDisk';
