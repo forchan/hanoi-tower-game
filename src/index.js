@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './styles/hanoi-tower-game.css';
 import './styles/index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './components/App.jsx';
 import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware } from 'redux';

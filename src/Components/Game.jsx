@@ -1,9 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Tower from '../containers/TowerContainer.jsx';
 import Disk from '../containers/DiskContainer.jsx';
 import { createDiskObject } from '../utils/DiskUtils.js';
+import Menu from '../components/Menu.jsx';
 
+const gameInSession = false;
 const Game = ({ towers, addManyDisksToTower }) => {
+  if (!gameInSession) {
+    return (<div className="app-body"><Menu/ ></div>)
+  }
   React.useEffect(() => {
     const totalDisks = 8;
     const initialDisks = [];
