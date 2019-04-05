@@ -46,7 +46,8 @@ const Header = () => {
             to the right most tower with following rules:
           </h6>
           <ul>
-            <li>you can only move one disk at a time by dragging it</li>
+            <li>you can move a disk by dragging it with your mouse</li>
+            <li>you can only move one disk at a time</li>
             <li>you can not move a disk that has another disk on top of it</li>
             <li>a larger disk may not be placed on a smaller disk</li>
           </ul>

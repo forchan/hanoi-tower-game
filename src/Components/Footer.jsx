@@ -1,13 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer className="app-footer">
-
-      </footer>
-    );
-  }
-}
+const Footer = () => {
+  return (
+    <Navbar className="app-footer">
+      <NavbarBrand />
+      <Nav className="ml-auto" navbar>
+        <NavItem>
+          <NavLink href="https://github.com/forchan/hanoi-tower-game" target="_blank">
+            <span style={{ color: 'white' }}>
+              made by @chrischan on
+            </span>
+            {' '}
+            <span>
+              GitHub
+            </span>
+          </NavLink>
+        </NavItem>
+      </Nav>
+    </Navbar>
+  );
+};
 
 export default Footer;
