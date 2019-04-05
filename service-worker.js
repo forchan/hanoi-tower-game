@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/hanoi-tower-game/precache-manifest.0c1313b5e561d4306fd42c68be70a33d.js"
+  "/hanoi-tower-game/precache-manifest.63e494f3c47063dc3b594c6333d059cb.js"
 );
 
 workbox.clientsClaim();

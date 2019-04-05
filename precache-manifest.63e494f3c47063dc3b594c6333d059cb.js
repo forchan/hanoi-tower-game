@@ -12,15 +12,15 @@ self.__precacheManifest = [
     "url": "/hanoi-tower-game/static/js/runtime~main.ae07d220.js"
   },
   {
-    "revision": "953dff6db097d51e20e8",
-    "url": "/hanoi-tower-game/static/js/main.892981dc.chunk.js"
+    "revision": "715a731455e5733ea383",
+    "url": "/hanoi-tower-game/static/js/main.04175769.chunk.js"
   },
   {
     "revision": "6fad19780250c28d9d70",
     "url": "/hanoi-tower-game/static/js/2.ba45bef3.chunk.js"
   },
   {
-    "revision": "953dff6db097d51e20e8",
+    "revision": "715a731455e5733ea383",
     "url": "/hanoi-tower-game/static/css/main.482d9fa2.chunk.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = [
     "url": "/hanoi-tower-game/static/css/2.0e792be9.chunk.css"
   },
   {
-    "revision": "e7ded4aabd12f978e004c3ec40782be4",
+    "revision": "1f97c6308f44975922db6e90634f87e0",
     "url": "/hanoi-tower-game/index.html"
   }
 ];
