@@ -8,6 +8,7 @@ import {
   ModalBody
 } from 'reactstrap';
 import logo from '../styles/logo.svg'; // I can use the React logo right?
+import { HANOI_TOWER_GAME_NAME } from '../constants/GameConstants.js';
 
 const Header = () => {
   const [modal, setModal] = useState(false);
@@ -25,7 +26,7 @@ const Header = () => {
             alt="React logo"
           />
           <span style={{ color: 'white' }}>
-            Towers of Hanoi
+            {HANOI_TOWER_GAME_NAME}
           </span>
         </NavbarBrand>
         <Button color="info" onClick={toggleModal}>
@@ -42,8 +43,8 @@ const Header = () => {
         <ModalHeader>Instructions</ModalHeader>
         <ModalBody>
           <h6>
-            The goal of the game is to move all disks from the left most tower
-            to the right most tower with following rules:
+            The goal of this game is to move all disks from the left most tower
+            to the right most tower, while following these rules:
           </h6>
           <ul>
             <li>you can move a disk by dragging it with your mouse</li>
@@ -51,6 +52,9 @@ const Header = () => {
             <li>you can not move a disk that has another disk on top of it</li>
             <li>a larger disk may not be placed on a smaller disk</li>
           </ul>
+          <h6>
+            Goodluck! Also, feedback on this game is welcomed!
+          </h6>
         </ModalBody>
       </Modal>
     </Fragment>

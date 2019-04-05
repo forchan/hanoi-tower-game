@@ -11,6 +11,7 @@ import {
   Col,
 } from 'reactstrap';
 import { GameStates, AVAILABLE_LEVELS } from '../constants/GameConstants.js';
+import { HANOI_TOWER_GAME_NAME } from '../constants/GameConstants.js';
 
 const propTypes = {
   game: PropTypes.object.isRequired,
@@ -35,7 +36,7 @@ const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu, resetMoveCount }
     <Modal isOpen={true} fade={false} toggle={() => {}} centered>
       <ModalBody>
         <h1>
-          Towers of Hanoi
+          {HANOI_TOWER_GAME_NAME}
         </h1>
         &nbsp;
         <Form>

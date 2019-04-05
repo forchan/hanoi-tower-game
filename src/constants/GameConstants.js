@@ -8,3 +8,4 @@ export const GameStates = {
   WON: '#playerTooGood'
 };
 export const AVAILABLE_LEVELS = [ 3, 4, 5, 6, 7, 8 ];
+export const HANOI_TOWER_GAME_NAME = 'Hanoi Tower Game';
