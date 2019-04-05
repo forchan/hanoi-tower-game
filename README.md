@@ -4,11 +4,9 @@ In an effort to learn more [React](https://github.com/facebook/react), [Redux](h
 
 This styling theme and challenge is inspired by [CertiK](https://certik.org).
 
-This project uses [React DnD](https://github.com/react-dnd/react-dnd).
+This project uses [React DnD](https://github.com/react-dnd/react-dnd) and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-Disclaimer: My CSS is not that great and it shows.
+Disclaimer: My CSS is not that great and it shows. Also, I hope the React logo is useable here.
 
 ## Available Scripts
 
