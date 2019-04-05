@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { DropTarget } from 'react-dnd'
-import Disk from '../containers/DiskContainer.jsx';
 import { DISK } from '../constants/GameConstants.js';
 import { createDiskObject } from '../utils/DiskUtils.js';
 import { canDropDiskToTower } from '../utils/GameUtils.js';
@@ -25,7 +24,7 @@ const Tower = ({ disks, connectDropTarget, canDrop, isOver, incrementMoves }) =>
       {disksToRender}
     </div>
   );
-}
+};
 
 Tower.defaultProps = defaultProps;
 Tower.propTypes = propTypes;
@@ -53,6 +52,6 @@ function collect(connect, monitor) {
     isOver: monitor.isOver(),
     canDrop: monitor.canDrop()
   };
-}
+};
 
 export default DropTarget(DISK, spec, collect)(Tower);

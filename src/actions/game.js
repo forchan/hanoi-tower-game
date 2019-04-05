@@ -1,5 +1,4 @@
 import { GameStates } from '../constants/GameConstants.js';
-
 import {
   SET_GAME_STATE,
   SET_DISKS,

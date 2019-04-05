@@ -2,7 +2,6 @@
 
 .app {
   background-color: #e2e2e4;
-  /* text-align: center; */
   display: flex;
   min-height: 100vh;
   flex-direction: column;
@@ -18,8 +17,10 @@
     #1c1c1c 81%
   );
   min-height: 10vh;
+  max-height: 100px;
 }
 
+/* I can use these from the create-react-app starter code right? */
 .app-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 33px;
@@ -45,6 +46,7 @@
     #1c1c1c 85%
   );
   min-height: 10vh;
+  max-height: 100px;
 }
 
 .github-link {
@@ -78,6 +80,8 @@ h1, h2, h3, h4, h5, h6 {
   color: #37393f;
 }
 
+/* -------- BUTTONS --------- */
+
 .btn-success {
   background: #3bbc32 !important;
   border-color: #3bbc32 !important;
@@ -93,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .menu-box {
    position: fixed !important;
-   top: 12vh !important;
+   top: calc(8vh + 40px) !important;
    width: 55vh !important;
    height: 87px !important;
    min-width: 375px !important;

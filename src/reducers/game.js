@@ -40,7 +40,7 @@ const gameReducer = (state = initialGameState, action) => {
       return {
         ...state,
         movesTaken: 0
-      }
+      };
     default:
       return state;
   }

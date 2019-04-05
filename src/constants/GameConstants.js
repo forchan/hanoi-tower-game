@@ -7,3 +7,4 @@ export const GameStates = {
   NOT_STARTED: '#notInGame',
   WON: '#playerTooGood'
 };
+export const AVAILABLE_LEVELS = [ 3, 4, 5, 6, 7, 8 ];

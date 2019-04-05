@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import {
   Button,
   Modal,
@@ -9,12 +10,19 @@ import {
   Label,
   Col,
 } from 'reactstrap';
-import { GameStates } from '../constants/GameConstants.js';
+import { GameStates, AVAILABLE_LEVELS } from '../constants/GameConstants.js';
+
+const propTypes = {
+  game: PropTypes.object.isRequired,
+  setupNewGame: PropTypes.func.isRequired,
+  removeAllDisks: PropTypes.func.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
+  resetMoveCount: PropTypes.func.isRequired
+};
 
 const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu, resetMoveCount }) => {
   const [ selectedLevel, setSelectedLevel ] = useState(game.diskLevel);
-  const availableLevels = [ 3, 4, 5, 6, 7, 8 ];
-  const levelOptions = availableLevels.map((availableLevel) => (
+  const levelOptions = AVAILABLE_LEVELS.map((availableLevel) => (
     <option key={availableLevel}>{availableLevel}</option>
   ));
   const clearDisksAndStartNewGame = () => {
@@ -69,5 +77,7 @@ const Menu = ({ game, setupNewGame, removeAllDisks, toggleMenu, resetMoveCount }
     </Modal>
   );
 };
+
+Menu.propTypes = propTypes;
 
 export default Menu;

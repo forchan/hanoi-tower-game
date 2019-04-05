@@ -12,4 +12,4 @@ export const createGameStartDisks = numDisks => {
     gameStartDisks.push(createDiskObject(parseInt(numDisk)));
   }
   return gameStartDisks;
-}
+};

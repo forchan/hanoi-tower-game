@@ -1,11 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Tower from '../containers/TowerContainer.jsx';
-import Disk from '../containers/DiskContainer.jsx';
-import { createGameStartDisks, createDiskObject } from '../utils/DiskUtils.js';
+import { createGameStartDisks } from '../utils/DiskUtils.js';
 import { calculateMinimumPossibleMoves } from '../utils/GameUtils.js';
 import Menu from '../containers/MenuContainer.jsx';
-import { GameStates, NO_DISKS_YET } from '../constants/GameConstants.js';
-import { Button, Card, CardBody, Col, Row } from 'reactstrap';
+import { GameStates } from '../constants/GameConstants.js';
+import { Button, Card, CardBody } from 'reactstrap';
+
+const propTypes = {
+  game: PropTypes.object.isRequired,
+  towers: PropTypes.object.isRequired,
+  addManyDisksToTower: PropTypes.func.isRequired,
+  toggleMenu: PropTypes.func.isRequired,
+  setGameState: PropTypes.func.isRequired
+};
 
 const Game = ({ game, towers, addManyDisksToTower, toggleMenu, setGameState }) => {
   if (game.menu) {
@@ -58,5 +66,6 @@ const Game = ({ game, towers, addManyDisksToTower, toggleMenu, setGameState }) =
   );
 };
 
+Game.propTypes = propTypes;
 
 export default Game;

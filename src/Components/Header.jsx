@@ -7,7 +7,7 @@ import {
   ModalHeader,
   ModalBody
 } from 'reactstrap';
-import logo from '../styles/logo.svg';
+import logo from '../styles/logo.svg'; // I can use the React logo right?
 
 const Header = () => {
   const [modal, setModal] = useState(false);
@@ -55,6 +55,6 @@ const Header = () => {
       </Modal>
     </Fragment>
   );
-}
+};
 
 export default Header;
