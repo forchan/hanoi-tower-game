@@ -45,12 +45,14 @@
     #1c1c1c 85%
   );
   min-height: 10vh;
-  /* display: flex; */
-  /* flex-direction: column;
-  justify-content: center;
-  text-align: right;
-  font-size: calc(10px + 2vmin); */
-  /* color: white; */
+}
+
+.github-link {
+  color: #e0e0e0 !important;
+}
+
+.github-link:hover {
+  color: white !important;
 }
 
 /* -------- BODY -------- */
@@ -120,7 +122,8 @@ h1, h2, h3, h4, h5, h6 {
   border-top-right-radius: 20px;
 }
 
-/* -------- DISK -------- */
+/* -------- DISKS -------- */
+/* there might be a better way than customizing all disks manually */
 
 .disk {
 	height: calc((5.1vh + 5.1vw) / 2);
@@ -134,9 +137,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk1 {
   background: linear-gradient(
     -45deg,
-    #ff9191 0%,
-    #f22e2e 29%,
-    #e21a00 85%
+    #82d3e5 0%,
+    #4bcfed 29%,
+    #06b1d8 85%
   );
   width: 23%;
 }
@@ -144,9 +147,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk2 {
   background: linear-gradient(
     -45deg,
-    #f4b773 0%,
-    #f49f3d 29%,
-    #fc7a00 85%
+    #84b8ed 0%,
+    #4aa0f7 29%,
+    #066fd8 85%
   );
   width: 34%;
 }
@@ -154,9 +157,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk3 {
   background: linear-gradient(
     -45deg,
-    #caf490 0%,
-    #aeef53 29%,
-    #80d806 85%
+    #a87cea 0%,
+    #8c4aef 29%,
+    #5a06d8 85%
   );
   width: 45%;
 }
@@ -164,9 +167,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk4 {
   background: linear-gradient(
     -45deg,
-    #86efc3 0%,
-    #4beda9 29%,
-    #06d880 85%
+    #c282e5 0%,
+    #b64cef 29%,
+    #8e06d8 85%
   );
   width: 56%;
 }
@@ -174,9 +177,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk5 {
   background: linear-gradient(
     -45deg,
-    #82d3e5 0%,
-    #4bcfed 29%,
-    #06b1d8 85%
+    #ff9191 0%,
+    #f22e2e 29%,
+    #e21a00 85%
   );
   width: 67%;
 }
@@ -184,9 +187,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk6 {
   background: linear-gradient(
     -45deg,
-    #84b8ed 0%,
-    #4aa0f7 29%,
-    #066fd8 85%
+    #f4b773 0%,
+    #f49f3d 29%,
+    #fc7a00 85%
   );
   width: 78%;
 }
@@ -194,9 +197,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk7 {
   background: linear-gradient(
     -45deg,
-    #a87cea 0%,
-    #8c4aef 29%,
-    #5a06d8 85%
+    #caf490 0%,
+    #aeef53 29%,
+    #80d806 85%
   );
   width: 89%;
 }
@@ -204,9 +207,9 @@ h1, h2, h3, h4, h5, h6 {
 .disk8 {
   background: linear-gradient(
     -45deg,
-    #c282e5 0%,
-    #b64cef 29%,
-    #8e06d8 85%
+    #86efc3 0%,
+    #4beda9 29%,
+    #06d880 85%
   );
   width: 100%;
 }
