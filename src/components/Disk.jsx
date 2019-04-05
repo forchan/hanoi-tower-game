@@ -12,8 +12,8 @@ const defaultProps = {
 const propTypes = {
   size: PropTypes.number,
   draggable: PropTypes.bool,
-  connectDragSource: PropTypes.func.isRequired,
-  isDragging: PropTypes.func.isRequired
+  isDragging: PropTypes.bool.isRequired,
+  connectDragSource: PropTypes.func.isRequired
 };
 
 const Disk = ({ connectDragSource, isDragging, draggable, size }) => {
