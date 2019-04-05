@@ -78,6 +78,16 @@ h1, h2, h3, h4, h5, h6 {
   color: #37393f;
 }
 
+.btn-success {
+  background: #3bbc32 !important;
+  border-color: #3bbc32 !important;
+}
+
+.btn-danger {
+  background-color: #fc5050 !important;
+  border-color: #fc5050 !important;
+}
+
 /* -------- MENU --------- */
 /* Not related to Menu Modal */
 
