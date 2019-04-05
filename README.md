@@ -1,6 +1,6 @@
 # Hanoi Tower Game
 
-In an effort to learn more [React](https://github.com/facebook/react), [Redux](https://github.com/reactjs/redux), ES6 JavaScript, and CSS this is my take on the Tower of Hanoi game.
+In an effort to learn more [React](https://github.com/facebook/react), [Redux](https://github.com/reactjs/redux), ES6 JavaScript, and CSS, this is my take on the Tower of Hanoi game.
 
 This styling theme and challenge is inspired by [CertiK](https://certik.org).
 
